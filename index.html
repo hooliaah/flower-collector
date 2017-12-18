@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flower Collector</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1>Flower Collector!</h1>
+
+    <p>A random number will be shown at the start of the game.</p>
+    <p>By clicking on one of the four flowers, a certain amount of points will be added to your total score.</p>
+    <p>You win the game by matching your total score to the random number, and you lose the game if your total score goes above the random number.</p>
+    <p>The value of each flower is hidden until you click on it. At the start of each game, the value of each flower will change.</p>
+
+    <div>Random number <span id="random-number"></span></div>
+    <div id="your-score">Your total score</div>
+    <div id="win-loss">
+        <p id="wins">Wins: </p>
+        <p id="losses">Losses: </p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3" style="background: pink;">
+                <img src="assets/images/pink.jpg">
+            </div>
+            <div class="col-sm-3" style="background: purple;">
+                <img src="assets/images/purple.jpg">
+            </div>
+            <div class="col-sm-3" style="background: blue;">
+                <img src="assets/images/blue.jpg">
+            </div>
+            <div class="col-sm-3" style="background: green;">
+                <img src="assets/images/rainbow.jpg">
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script> 
+</body>
+</html>
