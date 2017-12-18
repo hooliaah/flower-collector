@@ -11,34 +11,36 @@
 </head>
 <body>
 
-    <h1>Flower Collector!</h1>
+    <div class="container" style="background: white;">
+        <h1>Flower Collector!</h1>
 
-    <p>A random number will be shown at the start of the game.</p>
-    <p>By clicking on one of the four flowers, a certain amount of points will be added to your total score.</p>
-    <p>You win the game by matching your total score to the random number, and you lose the game if your total score goes above the random number.</p>
-    <p>The value of each flower is hidden until you click on it. At the start of each game, the value of each flower will change.</p>
+        <p>A random number will be shown at the start of the game.</p>
+        <p>By clicking on one of the four flowers, a certain amount of points will be added to your total score.</p>
+        <p>You win the game by matching your total score to the random number, and you lose the game if your total score goes above the random number.</p>
+        <p>The value of each flower is hidden until you click on it. At the start of each game, the value of each flower will change.</p>
 
-    <div>Random number <span id="random-number"></span></div>
-    <div>Your total score: <span id="your-score"></span></div>
-    <div>
-        <p>Wins: <span id="wins"></span></p>
-        <p>Losses: <span id="losses"></span></p>
-        <p id="win-loss"></p>
+        <div>Random number <span id="random-number"></span></div>
+        <div>Your total score: <span id="your-score"></span></div>
+        <div>
+            <p>Wins: <span id="wins"></span></p>
+            <p>Losses: <span id="losses"></span></p>
+            <p id="win-loss"></p>
+        </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-3" style="background: pink;">
-                <img src="assets/images/pink.jpg" id="pink-flower" class="flower">
+            <div class="col-sm-3" style="background: pink; text-align: center;">
+                <img src="assets/images/pink.jpg" id="pink-flower" class="flower" style="width: 250px;">
             </div>
-            <div class="col-sm-3" style="background: purple;">
-                <img src="assets/images/purple.jpg" id="purple-flower" class="flower">
+            <div class="col-sm-3" style="background: purple; text-align: center;">
+                <img src="assets/images/purple.jpg" id="purple-flower" class="flower" style="width: 250px;">
             </div>
-            <div class="col-sm-3" style="background: blue;">
-                <img src="assets/images/blue.jpg" id="blue-flower" class="flower">
+            <div class="col-sm-3" style="background: blue; text-align: center;">
+                <img src="assets/images/blue.jpg" id="blue-flower" class="flower" style="width: 250px;">
             </div>
-            <div class="col-sm-3" style="background: green;">
-                <img src="assets/images/rainbow.jpg" id="rainbow-flower" class="flower">
+            <div class="col-sm-3" style="background: green; text-align: center;">
+                <img src="assets/images/rainbow.jpg" id="rainbow-flower" class="flower" style="width: 250px;">
             </div>
         </div>
     </div>
