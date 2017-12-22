@@ -20,6 +20,10 @@ var i = false;
 //computer picks and displays random number
 $("#random-number").text(randomNumber);
 
+//wins and losses displayed as 0 at beginning of game
+$("#wins").text(numberWins);
+$("#losses").text(numberLosses);
+
 //when a flower image is clicked, the total score increases by the value of the flower.
 $("#pink-flower").on("click", function(){
     $("#win-loss").text("Try to match the random number.");
