@@ -5,44 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flower Collector</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
 
-    <div class="container" style="background: white;">
-        <h1>Flower Collector!</h1>
-
-        <p>A random number will be shown at the start of the game.</p>
-        <p>By clicking on one of the four flowers, a certain amount of points will be added to your total score.</p>
-        <p>You win the game by matching your total score to the random number, and you lose the game if your total score goes above the random number.</p>
-        <p>The value of each flower is hidden until you click on it. At the start of each game, the value of each flower will change.</p>
-
-        <div>Random number <span id="random-number"></span></div>
-        <div>Your total score: <span id="your-score"></span></div>
-        <div>
-            <p>Wins: <span id="wins"></span></p>
-            <p>Losses: <span id="losses"></span></p>
-            <p id="win-loss"></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Flower Collector!</h1>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12" id="instructions-div">
+                <p class="instructions">A random number will be shown at the start of the game.</p>
+                <p class="instructions">By clicking on one of the four flowers, a certain amount of points will be added to your total score.</p>
+                <p class="instructions">The value of each flower is hidden until you click on it. At the start of each game, the value of each flower will change.</p>
+                <p class="instructions">Win the game by matching your total score to the random number without going over.</p>
+            </div>
+        </div>
+        
+        <div class="row scores">
+            <div class="col-sm-4 mx-auto">
+                <h4>Wins: <span id="wins"></span></h4>
+            </div>
+            <div class="col-sm-4 mx-auto">
+                <h4>Losses: <span id="losses"></span></h4>
+            </div>
+        </div>
+                
+        <div class="row scores">
+            <div class="col-sm-4 mx-auto">
+                <h4>Random number: <span id="random-number"></span></h4>
+            </div>
+            <div class="col-sm-4 mx-auto">
+                <h4>Your total score: <span id="your-score"></span></h4>
+            </div>
+        </div>    
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-3" style="background: pink; text-align: center;">
-                <img src="assets/images/pink.jpg" id="pink-flower" class="flower" style="width: 250px;">
+        <div class="row" id="all-flowers-div">
+            <div class="col-sm-3" style="background: #eed0b7;">
+                <img src="assets/images/pink.jpg" id="pink-flower" class="flower img-fluid max-width: 100%; height: auto;">
             </div>
-            <div class="col-sm-3" style="background: purple; text-align: center;">
-                <img src="assets/images/purple.jpg" id="purple-flower" class="flower" style="width: 250px;">
+            <div class="col-sm-3" style="background: #9647d1;">
+                <img src="assets/images/purple.jpg" id="purple-flower" class="flower img-fluid max-width: 100%; height: auto;">
             </div>
-            <div class="col-sm-3" style="background: blue; text-align: center;">
-                <img src="assets/images/blue.jpg" id="blue-flower" class="flower" style="width: 250px;">
+            <div class="col-sm-3" style="background: #4256ca;">
+                <img src="assets/images/blue.jpg" id="blue-flower" class="flower img-fluid max-width: 100%; height: auto;">
             </div>
-            <div class="col-sm-3" style="background: green; text-align: center;">
-                <img src="assets/images/rainbow.jpg" id="rainbow-flower" class="flower" style="width: 250px;">
+            <div class="col-sm-3" style="background: #437215;">
+                <img src="assets/images/rainbow.jpg" id="rainbow-flower" class="flower img-fluid max-width: 100%; height: auto;">
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-sm-12" id="win-loss-div">
+                <p id="win-loss">Try to match the random number.</p>
+            </div>
+        </div>  
     </div>
     
     
