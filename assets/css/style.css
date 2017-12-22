@@ -8,6 +8,7 @@ body {
 h1 {
     text-align: center;
     padding: 10px;
+    font-size: 3rem;
 }
 
 .instructions {
