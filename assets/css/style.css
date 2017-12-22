@@ -1,6 +1,10 @@
 * {
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+body {
+    background: url("../images/background.png");
+}
 h1 {
     text-align: center;
     padding: 10px;
