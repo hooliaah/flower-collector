@@ -1,7 +1,7 @@
 # Flower Collector
 https://hooliaah.github.io/week-4-game/
 
-# Autor Info
+# Author Info
 Julie Groth
 
 # Technologies Used
