@@ -28,7 +28,9 @@ h1 {
 #win-loss-div {
     background: #EDDAD4;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 15px;
 }
 
 #all-flowers-div {
