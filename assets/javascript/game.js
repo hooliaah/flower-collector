@@ -1,104 +1,135 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-//variables
-var randomNumber = Math.floor(Math.random() * 102 + 19);
-var userScore = 0;
-var pinkNumber = Math.floor(Math.random() * 12 +1);
-var purpleNumber = Math.floor(Math.random() * 12 +1);
-var blueNumber = Math.floor(Math.random() * 12 +1);
-var rainbowNumber = Math.floor(Math.random() * 12 +1);
-var numberWins = 0;
-var numberLosses = 0;
+    // GLOBAL VARIABLES
+    // =================================================================
+    // random number and current user score set to 0
+    var randomNumber = 0;
+    var userScore = 0;
 
-//cursor gif display on hover
-var i = false;
-(function cursor(){
-  $(".flower").css("cursor", (i = !i) ? 'url("assets/images/cursor1.png"), auto' : 'url("assets/images/cursor2.png"), auto');
-  setTimeout(cursor, 100);
-})();
+    // number wins and losses counters
+    var numberWins = 0;
+    var numberLosses = 0;
 
-//computer picks and displays random number
-$("#random-number").text(randomNumber);
+    // flower variables
+    var flowers = {
+        pink: {
+            name: "Pink",
+            value: 0
+        },
+        purple: {
+            name: "Purple",
+            value: 0
+        },
+        blue: {
+            name: "Blue",
+            value: 0
+        },
+        rainbow: {
+            name: "Rainbow",
+            value: 0
+        },
+    };
 
-//wins and losses displayed as 0 at beginning of game
-$("#wins").text(numberWins);
-$("#losses").text(numberLosses);
+    // FUNCTIONS
+    // =================================================================
 
-//when a flower image is clicked, the total score increases by the value of the flower.
-$("#pink-flower").on("click", function(){
-    $("#win-loss").text("Try to match the random number.");
-    userScore = userScore + pinkNumber;
-    $("#your-score").text(userScore);
-    if(userScore > randomNumber){
-        loss();
-    }
-    if(userScore === randomNumber){
-        win();
-    }
-});
+    // cursor gif display on hover
+    var i = false;
+    (function cursor() {
+        $(".flower").css("cursor", (i = !i) ? 'url("assets/images/cursor1.png"), auto' : 'url("assets/images/cursor2.png"), auto');
+        setTimeout(cursor, 100);
+    })();
 
-$("#purple-flower").on("click", function(){
-    $("#win-loss").text("Try to match the random number.");
-    userScore = userScore + purpleNumber;
-    $("#your-score").text(userScore);
-    if(userScore > randomNumber){
-        loss();
-    }
-    if(userScore === randomNumber){
-        win();
-    }
-});
+    // function to get random numbers
+    var getRandom = function (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
 
-$("#blue-flower").on("click", function(){
-    $("#win-loss").text("Try to match the random number.");
-    userScore = userScore + blueNumber;
-    $("#your-score").text(userScore);
-    if(userScore > randomNumber){
-        loss();
-    }
-    if(userScore === randomNumber){
-        win();
-    }
-});
+    // function to start the game
+    var startGame = function () {
 
-$("#rainbow-flower").on("click", function(){
-    $("#win-loss").text("Try to match the random number.");
-    userScore = userScore + rainbowNumber;
-    $("#your-score").text(userScore);
-    if(userScore > randomNumber){
-        loss();
-    }
-    if(userScore === randomNumber){
-        win();
-    }
-});
+        // wins and losses updated at start of new game
+        $("#wins").text(numberWins);
+        $("#losses").text(numberLosses);
 
-//function to end game when the user wins
-function win(){
-    $("#win-loss").text("You won!! Try to match the new number.");
-    numberWins += 1;
-    $("#wins").text(numberWins);
-    reset();
-};
+        // set and display current user score to 0 at beginning of game
+        userScore = 0;
+        $("#your-score").text(userScore);
 
-//function to end game when the user loses
-function loss(){
-    $("#win-loss").text("You lost. Try to match the new number.");
-    numberLosses += 1;
-    $("#losses").text(numberLosses);
-    reset();
-};
+        // set and display random number target
+        randomNumber = getRandom(19, 120);
+        $("#random-number").text(randomNumber);
 
-//function to reset the game
-function reset(){
-    randomNumber = Math.floor(Math.random() * 102 + 19);
-    $("#random-number").text(randomNumber);
-    userScore = 0;
-    $("#your-score").text(userScore);
-    pinkNumber = Math.floor(Math.random() * 12 +1);
-    purpleNumber = Math.floor(Math.random() * 12 +1);
-    blueNumber = Math.floor(Math.random() * 12 +1);
-    rainbowNumber = Math.floor(Math.random() * 12 +1);
-}
+        // set flower values
+        flowers.pink.value = getRandom(1, 12);
+        flowers.purple.value = getRandom(1, 12);
+        flowers.blue.value = getRandom(1, 12);
+        flowers.rainbow.value = getRandom(1, 12);
+    };
+
+    // call startGame to initiate game
+    startGame();
+
+    // function to determine if user has won or lost
+    var checkGameEnd = function () {
+        // determine if userScore is greater than randomNumber
+        if (userScore > randomNumber) {
+
+            // alert user that they lost
+            $("#win-loss").text("You lost. Try to match the new number.");
+
+            // increase loss counter
+            numberLosses += 1;
+
+            // restart the game
+            startGame();
+
+            // determine if userScore is equal to randomNumber
+        } else if (userScore === randomNumber) {
+
+            // alert user that they won
+            $("#win-loss").text("You won!! Try to match the new number.");
+
+            // increase win counter
+            numberWins += 1;
+
+            // restart the game
+            startGame();
+        }
+    };
+
+    // Function to add values when flowers clicked
+    var updateScore = function (clickedFlower) {
+
+        // add flower value to current userScore
+        userScore += clickedFlower.value;
+
+        // display current score
+        $("#your-score").text(userScore);
+
+        // alert the user to keep guessing
+        $("#win-loss").text("Keep guessing. Try to match the random number.");
+
+        // see if user won or lost
+        checkGameEnd();
+    };
+
+
+    // on-click functions, the total score increases by the value of the flower when clicked
+    $("#pink-flower").click(function () {
+        updateScore(flowers.pink);
+    });
+
+    $("#purple-flower").click(function () {
+        updateScore(flowers.purple);
+    });
+
+    $("#blue-flower").click(function () {
+        updateScore(flowers.blue);
+    });
+
+    $("#rainbow-flower").click(function () {
+        updateScore(flowers.rainbow);
+    });
 
 });
