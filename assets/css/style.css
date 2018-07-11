@@ -11,6 +11,10 @@ h1 {
     font-size: 3rem;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 .instructions {
     text-align: center;
     margin-bottom: 0.5rem;
