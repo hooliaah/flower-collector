@@ -131,5 +131,9 @@ $(document).ready(function () {
     $("#rainbow-flower").click(function () {
         updateScore(flowers.rainbow);
     });
+  // =================================================================
+
+  // Add year to footer
+  $("#year").text(new Date().getFullYear());
 
 });
